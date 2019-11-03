@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import ActionButton from '../ActionButton/ActionButton.js';
-import TemperatureSection from '../TemperatureSection/TemperatureSection.js';
-import SnowSection from '../SnowSection/SnowSection.js';
+import ActionButton from '../ActionButton/ActionButton';
+import TemperatureSection from '../TemperatureSection/TemperatureSection';
+import SnowSection from '../SnowSection/SnowSection';
+import Loading from '../Loading/Loading';
 import getData from '../../utils/dataHelper';
 import {
     showLocalNotification,
@@ -21,10 +22,12 @@ class Panel extends Component {
 
     async componentDidMount() {
         const data = await getData();
+        this.setState({
+            data
+        });
         const permission = await hasPermission();
         this.setState({
-            hasPermission: permission,
-            data
+            hasPermission: permission
         })
     }
 
@@ -59,7 +62,7 @@ class Panel extends Component {
     render() {
         const { data, hasPermission } = this.state;
         if (!data) {
-            return <div>Loading...</div>
+            return <Loading />
         }
         return (
             <section className="panel">
