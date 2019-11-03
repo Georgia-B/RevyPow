@@ -2,27 +2,38 @@ import React, { Component } from 'react';
 import ActionButton from '../ActionButton/ActionButton.js';
 import TemperatureSection from '../TemperatureSection/TemperatureSection.js';
 import SnowSection from '../SnowSection/SnowSection.js';
-import * as data from '../../data.json';
+import getData from '../../utils/dataHelper';
 import {
     showLocalNotification,
     requestNotificationPermission,
     revokePermission,
     hasPermission
-} from '../../utils';
+} from '../../utils/permissionHelper';
 
 class Panel extends Component {
     constructor() {
         super();
         this.state = {
-            hasPermission: false
+            hasPermission: false,
+            data: null
         }
     }
 
     async componentDidMount() {
+        const data = await getData();
         const permission = await hasPermission();
         this.setState({
-            hasPermission: permission
+            hasPermission: permission,
+            data
         })
+    }
+
+    componentDidUpdate(newProps) {
+        if (this.props.data !== newProps.data) {
+            this.setState({
+                data: newProps.data
+            })
+        }
     }
 
     subscribeUser = () => {
@@ -46,17 +57,21 @@ class Panel extends Component {
     }
 
     render() {
+        const { data, hasPermission } = this.state;
+        if (!data) {
+            return <div>Loading...</div>
+        }
         return (
             <section className="panel">
                 <div>
                     <h1 className="panel__title">RevyPow</h1>
                 </div>
-                <SnowSection data={data.freshSnow} />
+                <SnowSection data={data.newSnow} />
                 <TemperatureSection data={data.temperatures} />
                 <div>
                     Updated: {data.dateUpdated.value}
                 </div>
-                <ActionButton isSubscribed={this.state.hasPermission} onClick={this.state.hasPermission ? this.unsubscribeUser : this.subscribeUser} />
+                <ActionButton isSubscribed={hasPermission} onClick={hasPermission ? this.unsubscribeUser : this.subscribeUser} />
             </section>
         );
     }
