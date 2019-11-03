@@ -1,0 +1,18 @@
+@import './breakpoints.scss';
+@import '../Components/Panel/panel.scss';
+@import '../Components/ActionButton/action.scss';
+@import '../Components/SnowSection/snow-section.scss';
+@import '../Components/TemperatureSection/temperature-section.scss';
+
+.app {
+  text-align: center;
+  font-size: 16px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1473984951266-787b955c9e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+}

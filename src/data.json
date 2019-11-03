@@ -1,0 +1,35 @@
+{
+    "temperatures": [
+        {
+            "title": "Subpeak",
+            "subtitle": "(2,340m)",
+            "value": "-7"
+        },
+        {
+            "title": "The Ripper",
+            "subtitle": "(1,950m)",
+            "value": "-4"
+        },
+        {
+            "title": "Village Base",
+            "subtitle": "(512m)",
+            "value": "2"
+        }
+    ],
+    "freshSnow": {
+        "title": "Fresh snow",
+        "value": "1"
+    },
+    "wind": {
+        "title": "Windspeed",
+        "value": "14 km/h"
+    },
+    "base": {
+        "title": "Base Depth",
+        "value": "40"
+    },
+    "dateUpdated": {
+        "title": "Date updated",
+        "value": "Friday, November 1, 2019 2:16pm"
+    }
+}

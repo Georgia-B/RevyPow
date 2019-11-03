@@ -1,0 +1,36 @@
+.temperature-section {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.temperature {
+    margin: 10px;
+    width: 30%;
+  
+  &__title {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  &__value {
+    margin-top: 10px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__unit {
+    font-size: 16px;
+    padding-left: 5px;
+  }
+}
+
+
+@media (max-width: $breakpoint-medium) {
+  .temperature-section {
+    width: 100%;
+  }
+}
