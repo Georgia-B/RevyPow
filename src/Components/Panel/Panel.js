@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ActionButton from '../ActionButton/ActionButton';
+import SubscribeSwitch from '../SubscribeSwitch/SubscribeSwitch';
 import TemperatureSection from '../TemperatureSection/TemperatureSection';
 import SnowSection from '../SnowSection/SnowSection';
 import Loading from '../Loading/Loading';
@@ -37,14 +37,26 @@ class Panel extends Component {
                 data: newProps.data
             })
         }
+        if (this.props.hasPermission !== newProps.hasPermission) {
+            this.setState({
+                hasPermission: newProps.hasPermission
+            })
+        }
     }
 
     subscribeUser = () => {
+        this.setState({
+            hasPermission: true
+        })
         requestNotificationPermission().then(permission => {
             if (permission === "granted") {
                 showLocalNotification("Welcome to Revy Powda", "Hey there")
                 this.setState({
                     hasPermission: true
+                })
+            } else {
+                this.setState({
+                    hasPermission: false
                 })
             }
         });
@@ -65,17 +77,22 @@ class Panel extends Component {
             return <Loading />
         }
         return (
-            <section className="panel">
-                <div>
-                    <h1 className="panel__title">RevyPow</h1>
-                </div>
-                <SnowSection data={data.newSnow} />
-                <TemperatureSection data={data.temperatures} />
-                <div>
-                    Updated: {data.dateUpdated.value}
-                </div>
-                <ActionButton isSubscribed={hasPermission} onClick={hasPermission ? this.unsubscribeUser : this.subscribeUser} />
-            </section>
+            <React.Fragment>
+                <SubscribeSwitch isSubscribed={hasPermission} onClick={hasPermission ? this.unsubscribeUser : this.subscribeUser} />
+                <section className="panel">
+                    <div>
+                        <h1 className="panel__title">RevyPow</h1>
+                    </div>
+                    <SnowSection data={data.newSnow} />
+                    <TemperatureSection data={data.temperatures} />
+                    <div>
+                        Updated: {data.dateUpdated.value}
+                    </div>
+                </section>
+                {hasPermission && <div className="subscription-notice">
+                    You are now subscribed to the morning snow report.
+                </div>}
+            </React.Fragment>
         );
     }
 
