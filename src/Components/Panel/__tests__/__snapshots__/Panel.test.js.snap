@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components | <Panel /> with data should render correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="panel"
+  >
+    <div>
+      <h1
+        class="panel__title"
+      >
+        RevyPow
+      </h1>
+    </div>
+    <section
+      class="content-section snow-container"
+    >
+      <div
+        class="snowsection"
+      >
+        <h3
+          class="snowsection__title"
+        >
+          Fresh snow
+        </h3>
+        <span
+          class="snowsection__value"
+        >
+          2 cm
+        </span>
+      </div>
+      <div
+        class="snowsection"
+      >
+        <h3
+          class="snowsection__title"
+        >
+          Base snow
+        </h3>
+        <span
+          class="snowsection__value"
+        >
+          40 cm
+        </span>
+      </div>
+    </section>
+    <section
+      class="content-section"
+    >
+      <div
+        class="temperature"
+      >
+        <div>
+          <h3
+            class="temperature__title"
+          >
+            Subpeak
+          </h3>
+          <span>
+            2000m
+          </span>
+        </div>
+        <div
+          class="temperature__value"
+        >
+          2 
+          <span
+            class="temperature__unit"
+          >
+            °C
+          </span>
+        </div>
+      </div>
+    </section>
+    <div>
+      <div>
+        Last updated
+      </div>
+      <div>
+        yesterday
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Components | <Panel /> with no data should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="loading"
+  >
+    <div
+      class="loading__spinner"
+    >
+      <div
+        class="loading__spinner__item"
+      />
+      <div
+        class="loading__spinner__item"
+      />
+      <div
+        class="loading__spinner__item"
+      />
+      <div
+        class="loading__spinner__item"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
