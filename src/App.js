@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Panel from './Components/Panel/Panel';
 import SubscribeSwitch from './Components/SubscribeSwitch/SubscribeSwitch';
-import getData from './utils/dataHelper';
+import { getData } from './utils/dataHelper';
 import { hasPermission, revokePermission, requestNotificationPermission } from './utils/permissionHelper';
 
 class App extends Component {
@@ -14,27 +14,12 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const data = await getData();
-    this.setState({
-      data
+    getData().then(data => {
+      this.setState({ data });
     });
-    const permission = await hasPermission();
-    this.setState({
-      hasPermission: permission
-    })
-  }
-
-  componentDidUpdate(newProps) {
-    if (this.props.data !== newProps.data) {
-      this.setState({
-        data: newProps.data
-      })
-    }
-    if (this.props.hasPermission !== newProps.hasPermission) {
-      this.setState({
-        hasPermission: newProps.hasPermission
-      })
-    }
+    hasPermission().then(hasPermission => {
+      this.setState({ hasPermission });
+    });
   }
 
   subscribeUser = () => {
@@ -65,7 +50,6 @@ class App extends Component {
 
   render() {
     const { hasPermission, data } = this.state;
-
     return (
       <div className="app">
         <SubscribeSwitch isSubscribed={hasPermission} onClick={hasPermission ? this.unsubscribeUser : this.subscribeUser} />

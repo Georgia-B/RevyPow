@@ -1,15 +1,17 @@
 import axios from 'axios';
 
 const apiUrl = 'https://67ofaijzg0.execute-api.ca-central-1.amazonaws.com/V1';
-const s3Url = 'https://revypow.s3.ca-central-1.amazonaws.com/data.json';
 
-const getData = () => {
-    return fetch(s3Url)
-        .then(res => res.json())
-        .then((data) => {
-            return data;
-        })
-        .catch(err => { throw err });
+export const getData = () => {
+    return axios({
+        method: 'GET',
+        url: `${apiUrl}/data`
+    }).then(response => {
+        return response.data;
+    }).catch(err => {
+        console.log(`Failed to fetch data: ${err}`);
+        return null;
+    })
 }
 
 export const saveSubscription = (subscription) => {
@@ -17,15 +19,17 @@ export const saveSubscription = (subscription) => {
         method: 'POST',
         url: `${apiUrl}/subscription`,
         data: { subscription }
+    }).catch(err => {
+        console.log(`Failed to save subscription. Error: ${err}`);
     });
 }
 
-export const removeSubscription = (subscription) => {
+export const deleteSubscription = (subscription) => {
     return axios({
         method: 'DELETE',
         url: `${apiUrl}/subscription`,
         data: { subscription }
-    });
+    }).catch(err => {
+        console.log(`Failed to delete subscription. Error: ${err}`);
+    });;
 }
-
-export default getData;

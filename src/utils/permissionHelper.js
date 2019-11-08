@@ -1,16 +1,6 @@
-import { saveSubscription, removeSubscription } from './dataHelper';
+import { saveSubscription, deleteSubscription } from './dataHelper';
 
 const appServerKey = "BE2Ek7B4pFkyyKz9n6QOETMDX-MhHf34Xh6SJ_l1XhDd_XCjHunBImoVIbPd17ZOZwEWfEQe0ZIT-75K9zsuGd8"
-
-export const showLocalNotification = (title, body) => {
-    navigator.serviceWorker.ready.then(function (registration) {
-        const options = {
-            body,
-            vibrate: [300]
-        };
-        registration.showNotification(title, options);
-    });
-}
 
 export const requestNotificationPermission = async () => {
     const permission = await window.Notification.requestPermission();
@@ -47,7 +37,7 @@ export const revokePermission = async () => {
                     return false;
                 }
                 subscription.unsubscribe().then(function (response) {
-                    return removeSubscription(subscription)
+                    return deleteSubscription(subscription)
                         .then(res => {
                             return response;
                         });
@@ -63,10 +53,8 @@ export const hasPermission = async () => {
         .then(function (reg) {
             return reg.pushManager.getSubscription().then(function (subscription) {
                 if (!subscription) {
-                    console.log("User not subscribed");
                     return false;
                 } else {
-                    console.log("User subscribed");
                     return true;
                 }
             })
@@ -76,7 +64,7 @@ export const hasPermission = async () => {
 function urlBase64ToUint8Array(base64String) {
     var padding = '='.repeat((4 - base64String.length % 4) % 4);
     var base64 = (base64String + padding)
-        .replace(/\-/g, '+')
+        .replace(/-/g, '+')
         .replace(/_/g, '/');
 
     var rawData = window.atob(base64);
