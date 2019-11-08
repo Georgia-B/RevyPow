@@ -1,3 +1,7 @@
+import { saveSubscription, removeSubscription } from './dataHelper';
+
+const appServerKey = "BE2Ek7B4pFkyyKz9n6QOETMDX-MhHf34Xh6SJ_l1XhDd_XCjHunBImoVIbPd17ZOZwEWfEQe0ZIT-75K9zsuGd8"
+
 export const showLocalNotification = (title, body) => {
     navigator.serviceWorker.ready.then(function (registration) {
         const options = {
@@ -28,7 +32,10 @@ export const subscribeUserToPush = () => {
             return registration.pushManager.subscribe(subscribeOptions);
         })
         .then(function (pushSubscription) {
-            return pushSubscription;
+            return saveSubscription(pushSubscription)
+                .then(res => {
+                    return pushSubscription;
+                });
         });
 }
 
@@ -40,7 +47,10 @@ export const revokePermission = async () => {
                     return false;
                 }
                 subscription.unsubscribe().then(function (response) {
-                    return response;
+                    return removeSubscription(subscription)
+                        .then(res => {
+                            return response;
+                        });
                 }).catch(function (e) {
                     return false;
                 })

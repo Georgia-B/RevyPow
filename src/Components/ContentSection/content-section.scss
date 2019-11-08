@@ -1,0 +1,17 @@
+.content-section {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 10px 0;
+}
+
+.snow-container {
+    justify-content: center;
+}
+
+@media (max-width: $breakpoint-medium) {
+    .content-section {
+        width: 90%;
+    }
+}

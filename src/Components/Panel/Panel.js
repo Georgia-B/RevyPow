@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import SubscribeSwitch from '../SubscribeSwitch/SubscribeSwitch';
-import TemperatureSection from '../TemperatureSection/TemperatureSection';
+import Temperature from '../TemperatureSection/Temperature';
 import SnowSection from '../SnowSection/SnowSection';
 import Loading from '../Loading/Loading';
 import getData from '../../utils/dataHelper';
 import {
-    showLocalNotification,
     requestNotificationPermission,
     revokePermission,
     hasPermission
 } from '../../utils/permissionHelper';
+import ContentSection from '../ContentSection/ContentSection';
 
 class Panel extends Component {
     constructor() {
@@ -50,7 +50,6 @@ class Panel extends Component {
         })
         requestNotificationPermission().then(permission => {
             if (permission === "granted") {
-                showLocalNotification("Welcome to Revy Powda", "Hey there")
                 this.setState({
                     hasPermission: true
                 })
@@ -83,14 +82,25 @@ class Panel extends Component {
                     <div>
                         <h1 className="panel__title">RevyPow</h1>
                     </div>
-                    <SnowSection data={data.newSnow} />
-                    <TemperatureSection data={data.temperatures} />
+                    <ContentSection className="snow-container">
+                        <SnowSection data={data.newSnow} />
+                        <SnowSection data={data.base} />
+                    </ContentSection>
+                    <ContentSection>
+                        {data.temperatures.map(temp => {
+                            return <Temperature
+                                key={temp.title}
+                                title={temp.title}
+                                subtitle={temp.subtitle}
+                                value={temp.value} />
+                        })}
+                    </ContentSection>
                     <div>
-                        Updated: {data.dateUpdated.value}
+                        <div>Last updated</div><div>{data.dateUpdated.value}</div>
                     </div>
                 </section>
                 {hasPermission && <div className="subscription-notice">
-                    You are now subscribed to the morning snow report.
+                    You are subscribed to the morning snow report.
                 </div>}
             </React.Fragment>
         );
