@@ -1,6 +1,9 @@
 import React from 'react';
 
 const SnowSection = (props) => {
+    if (!props.data) {
+        return null;
+    }
     return (
         <div className="snowsection">
             <h3 className="snowsection__title">{props.data.title}</h3>

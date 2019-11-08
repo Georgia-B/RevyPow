@@ -1,6 +1,9 @@
 import React from 'react';
 
 const Temperature = (props) => {
+    if (!props.value || !props.title) {
+        return null;
+    }
     return (
         <div key={props.title} className="temperature">
             <div>

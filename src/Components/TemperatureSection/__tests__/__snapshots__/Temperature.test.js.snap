@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components | <Temperature /> with data should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="temperature"
+  >
+    <div>
+      <h3
+        class="temperature__title"
+      >
+        Subpeak
+      </h3>
+      <span>
+        1200m
+      </span>
+    </div>
+    <div
+      class="temperature__value"
+    >
+      2 
+      <span
+        class="temperature__unit"
+      >
+        °C
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components | <Temperature /> with no data should render correctly 1`] = `<DocumentFragment />`;

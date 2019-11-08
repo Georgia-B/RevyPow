@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components | <SnowSection /> with data should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="snowsection"
+  >
+    <h3
+      class="snowsection__title"
+    >
+      Base
+    </h3>
+    <span
+      class="snowsection__value"
+    >
+      15 cm
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components | <SnowSection /> with no data should render correctly 1`] = `<DocumentFragment />`;

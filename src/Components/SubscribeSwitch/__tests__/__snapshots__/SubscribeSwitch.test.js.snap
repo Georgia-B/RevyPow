@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components | <SubscribeSwitch /> when not subscribed should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="subscribe__container"
+  >
+    <label
+      class="MuiFormControlLabel-root"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-93 MuiSwitch-switchBase MuiSwitch-colorSecondary"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              aria-label="primary checkbox"
+              class="PrivateSwitchBase-input-96 MuiSwitch-input"
+              type="checkbox"
+              value="false"
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <span
+        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+      >
+        Notifications
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components | <SubscribeSwitch /> when subscribed should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="subscribe__container"
+  >
+    <label
+      class="MuiFormControlLabel-root"
+    >
+      <span
+        class="MuiSwitch-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-19 MuiSwitch-switchBase MuiSwitch-colorSecondary PrivateSwitchBase-checked-20 Mui-checked"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <input
+              aria-label="primary checkbox"
+              checked=""
+              class="PrivateSwitchBase-input-22 MuiSwitch-input"
+              type="checkbox"
+              value="true"
+            />
+            <span
+              class="MuiSwitch-thumb"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiSwitch-track"
+        />
+      </span>
+      <span
+        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+      >
+        Notifications
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;

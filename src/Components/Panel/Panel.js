@@ -27,9 +27,11 @@ const Panel = (props) => {
                         value={temp.value} />
                 })}
             </ContentSection>
-            <div>
-                <div>Last updated</div><div>{data.dateUpdated.value}</div>
-            </div>
+            {data.dateUpdated &&
+                <div>
+                    <div>Last updated</div><div>{data.dateUpdated.value}</div>
+                </div>
+            }
         </section>
     );
 }

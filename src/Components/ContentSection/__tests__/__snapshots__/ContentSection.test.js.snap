@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components | <ContentSection /> with custom class should render correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="content-section testclass"
+  >
+    <h1>
+      Hello World
+    </h1>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Components | <ContentSection /> with no class should render correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="content-section"
+  >
+    <h1>
+      Hello World
+    </h1>
+  </section>
+</DocumentFragment>
+`;
