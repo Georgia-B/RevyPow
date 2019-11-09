@@ -7,8 +7,10 @@ export const requestNotificationPermission = async () => {
     if (permission !== 'granted') {
         return permission;
     }
-    await subscribeUserToPush();
-    return permission;
+    return subscribeUserToPush().then(res => {
+        console.log(res)
+        return permission;
+    });
 }
 
 export const subscribeUserToPush = () => {

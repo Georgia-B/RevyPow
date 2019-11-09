@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const apiUrl = 'https://67ofaijzg0.execute-api.ca-central-1.amazonaws.com/V1';
+let apiUrl = 'https://67ofaijzg0.execute-api.ca-central-1.amazonaws.com/V1';
+if (process.env.NODE_ENV === 'development') {
+    apiUrl = 'https://67ofaijzg0.execute-api.ca-central-1.amazonaws.com/test';
+}
 
 export const getData = () => {
     return axios({
@@ -9,7 +12,7 @@ export const getData = () => {
     }).then(response => {
         return response.data;
     }).catch(err => {
-        console.log(`Failed to fetch data: ${err}`);
+        console.log(`Failed to fetch data. Error: ${err}`);
         return null;
     })
 }

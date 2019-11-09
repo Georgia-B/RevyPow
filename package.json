@@ -13,6 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && cra-append-sw ./src/sw-epilog.js",
+    "build-prod": "npm run build && rimraf build/**/*.map",
     "test": "react-scripts test",
     "test-u": "react-scripts test -- -u",
     "eject": "react-scripts eject"
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@testing-library/react": "^9.3.2",
     "cra-append-sw": "^2.6.1",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "rimraf": "^3.0.0"
   }
 }

@@ -27,25 +27,19 @@ class App extends Component {
       hasPermission: true
     })
     requestNotificationPermission().then(permission => {
-      if (permission === "granted") {
-        this.setState({
-          hasPermission: true
-        })
-      } else {
-        this.setState({
-          hasPermission: false
-        })
-      }
+      this.setState({
+        hasPermission: permission === "granted" ? true : false
+      });
     });
   }
 
   unsubscribeUser = async () => {
-    if (this.state.hasPermission) {
-      await revokePermission();
-      this.setState({
-        hasPermission: false
-      })
-    }
+    this.setState({
+      hasPermission: false
+    })
+    revokePermission().then(res => {
+      console.log("Unsubscribed");
+    });
   }
 
   render() {

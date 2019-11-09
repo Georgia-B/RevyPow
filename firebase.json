@@ -11,6 +11,13 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "https://revypow-dd6cc.firebaseapp.com/",
+        "destination": "https://revypow-dd6cc.web.app/",
+        "type": 301
+      }
     ]
   }
 }
