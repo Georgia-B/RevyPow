@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components | <Header /> should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="header"
+  >
+    <h1
+      class="header__title"
+    >
+      RevyPow
+    </h1>
+  </div>
+</DocumentFragment>
+`;
