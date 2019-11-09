@@ -89,6 +89,11 @@ exports[`Components | <SubscribeSwitch /> when subscribed should render correctl
         Notifications
       </span>
     </label>
+    <div
+      class="subscribe__message"
+    >
+      You are subscribed to the morning snow report.
+    </div>
   </div>
 </DocumentFragment>
 `;

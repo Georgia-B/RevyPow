@@ -2,16 +2,41 @@
     display: flex;
     width: 80%;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin: 10px 0;
+
+    &__spacer,
+    &__icon {
+        width: 50px;
+    }
 }
 
-.snow-container {
-    justify-content: center;
+.weather-container {
+    align-items: center;
+}
+
+@media (max-width: $breakpoint-large) {
+    .content-section {
+        width: 95%;
+    }
 }
 
 @media (max-width: $breakpoint-medium) {
     .content-section {
-        width: 90%;
+        justify-content: center;
+
+        &__icon,
+        &__spacer {
+            display: none;
+        }
+    }
+    .temperature-container {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: $breakpoint-small) {
+    .content-section {
+        width: 100%;
     }
 }

@@ -3,81 +3,123 @@
 exports[`Components | <Panel /> with data should render correctly 1`] = `
 <DocumentFragment>
   <section
-    class="panel"
+    class="panel-container"
   >
-    <div>
-      <h1
-        class="panel__title"
-      >
-        RevyPow
-      </h1>
-    </div>
-    <section
-      class="content-section snow-container"
+    <div
+      class="panel"
     >
-      <div
-        class="snowsection"
+      <section
+        class="content-section"
       >
-        <h3
-          class="snowsection__title"
+        <img
+          alt="snowflake"
+          class="content-section__icon"
+          src="snowflake.png"
+        />
+        <div
+          class="snowsection snowsection--large"
         >
-          Fresh snow
-        </h3>
-        <span
-          class="snowsection__value"
-        >
-          2 cm
-        </span>
-      </div>
-      <div
-        class="snowsection"
-      >
-        <h3
-          class="snowsection__title"
-        >
-          Base snow
-        </h3>
-        <span
-          class="snowsection__value"
-        >
-          40 cm
-        </span>
-      </div>
-    </section>
-    <section
-      class="content-section"
-    >
-      <div
-        class="temperature"
-      >
-        <div>
           <h3
-            class="temperature__title"
+            class="snowsection__title"
           >
-            Subpeak
+            Fresh snow
           </h3>
-          <span>
-            2000m
+          <span
+            class="snowsection__value"
+          >
+            2 cm
           </span>
         </div>
         <div
-          class="temperature__value"
+          class="snowsection"
         >
-          2 
-          <span
-            class="temperature__unit"
+          <h3
+            class="snowsection__title"
           >
-            °C
+            Base snow
+          </h3>
+          <span
+            class="snowsection__value"
+          >
+            40 cm
           </span>
         </div>
-      </div>
-    </section>
-    <div>
-      <div>
-        Last updated
-      </div>
-      <div>
-        yesterday
+        <div
+          class="content-section__spacer"
+        />
+      </section>
+      <section
+        class="content-section weather-container"
+      >
+        <img
+          alt="wind"
+          class="content-section__icon"
+          src="wind-swirls.png"
+        />
+        <div
+          class="weather-section__wind"
+        >
+          <h3
+            class="weather-section__direction"
+          />
+          <h1
+            class="weather-section__value"
+          >
+            5
+          </h1>
+          <div>
+            winds
+          </div>
+        </div>
+        <div
+          class="content-section__spacer"
+        />
+      </section>
+      <section
+        class="content-section temperature-container"
+      >
+        <img
+          alt="temperature"
+          class="content-section__icon"
+          src="thermometer.png"
+        />
+        <div
+          class="temperature"
+        >
+          <div>
+            <h3
+              class="temperature__title"
+            >
+              Subpeak
+            </h3>
+            <span>
+              2000m
+            </span>
+          </div>
+          <div
+            class="temperature__value"
+          >
+            2 
+            <span
+              class="temperature__unit"
+            >
+              °C
+            </span>
+          </div>
+        </div>
+        <div
+          class="content-section__spacer"
+        />
+      </section>
+      <div
+        class="panel__date"
+      >
+        <div>
+          Last updated
+        </div>
+        <div>
+          yesterday
+        </div>
       </div>
     </div>
   </section>

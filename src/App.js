@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Panel from './Components/Panel/Panel';
-import SubscribeSwitch from './Components/SubscribeSwitch/SubscribeSwitch';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import { getData } from './utils/dataHelper';
 import { hasPermission, revokePermission, requestNotificationPermission } from './utils/permissionHelper';
+import landscape from './res/landscape.jpg';
 
 class App extends Component {
   constructor() {
@@ -45,12 +47,14 @@ class App extends Component {
   render() {
     const { hasPermission, data } = this.state;
     return (
-      <div className="app">
-        <SubscribeSwitch isSubscribed={hasPermission} onClick={hasPermission ? this.unsubscribeUser : this.subscribeUser} />
+      <div className="app" style={{ backgroundImage: `url(${landscape})` }}>
+        <Header />
         <Panel data={data} hasPermission={hasPermission} />
-        {hasPermission && <div className="subscription-notice">
-          You are subscribed to the morning snow report.
-        </div>}
+        <Footer
+          hasPermission={hasPermission}
+          data={data}
+          unsubscribeUser={this.unsubscribeUser}
+          subscribeUser={this.subscribeUser} />
       </div>
     );
   }

@@ -11,6 +11,10 @@ const testData = {
             value: "2"
         }
     ],
+    wind: {
+        title: "windspeed",
+        value: "5"
+    },
     base: {
         title: "Base snow",
         value: "40"

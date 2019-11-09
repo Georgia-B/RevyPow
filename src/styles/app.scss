@@ -2,17 +2,18 @@
 @import '../Components/Panel/panel.scss';
 @import '../Components/SubscribeSwitch/subscribe-switch.scss';
 @import '../Components/Loading/loading.scss';
+@import '../Components/Header/header.scss';
+@import '../Components/Footer/footer.scss';
 @import '../Components/SnowSection/snow-section.scss';
+@import '../Components/WindSection/weather-section.scss';
 @import '../Components/TemperatureSection/temperature.scss';
 @import '../Components/ContentSection/content-section.scss';
 
 .app {
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  background-image: url("https://images.unsplash.com/photo-1473984951266-787b955c9e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  color: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

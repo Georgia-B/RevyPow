@@ -1,51 +1,22 @@
 .subscribe__container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    flex: 2;
 }
 
-.subscription-notice {
-    position: fixed;
-    right: 15px;
-    bottom: 15px;
-    color: #ffffff;
+.subscribe__message {
     font-size: 13px;
 }
 
-@media (max-width: $breakpoint-small) {
+@media (max-width: $breakpoint-medium) {
     .subscribe__container {
-        top: 0;
-        right: 10px;
-        height: 10vh;
-        display: flex;
-        align-items: center;
+        padding-left: 15px;
     }
 }
 
-.button {
-    color: #6d6d6d;
-    background-color: #f7f7f7;
-    padding: 8px 12px;
-    font-size: 16px;
-    font-family: inherit;
-    border: 0;
-    border-style: none;
-    border-radius: 4px;
-    cursor: pointer;
-
-    &:hover{
-        color: #5e5e5e;
-        background-image: linear-gradient(#f7f7f7,#e7e7e7,#d6d6d6);
-    }
-
-    &--sentiment-positive {
-        color: #ffffff;
-        background-color: #69ad69;
-        
-        &:hover {
-            color: #ffffff;
-            background-image: linear-gradient(#69ad69,#5da05d,rgb(89, 148, 89));
-        }
+@media (max-width: $breakpoint-small) {
+    .subscribe__container > .MuiFormControlLabel-root {
+        margin-right: 5px;
     }
 }

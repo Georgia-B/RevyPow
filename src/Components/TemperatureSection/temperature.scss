@@ -1,6 +1,6 @@
 .temperature {
     margin: 10px;
-    width: 30%;
+    width: 25%;
   
   &__title {
     font-size: 18px;
@@ -21,9 +21,14 @@
   }
 }
 
-
 @media (max-width: $breakpoint-medium) {
-  .temperature-section {
-    width: 100%;
+  .temperature {
+    width: 30%;
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .temperature__value {
+    font-size: 40px;
   }
 }

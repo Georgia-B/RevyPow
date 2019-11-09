@@ -5,9 +5,15 @@ exports[`Components | <ContentSection /> with custom class should render correct
   <section
     class="content-section testclass"
   >
+    <img
+      class="content-section__icon"
+    />
     <h1>
       Hello World
     </h1>
+    <div
+      class="content-section__spacer"
+    />
   </section>
 </DocumentFragment>
 `;
@@ -17,9 +23,15 @@ exports[`Components | <ContentSection /> with no class should render correctly 1
   <section
     class="content-section"
   >
+    <img
+      class="content-section__icon"
+    />
     <h1>
       Hello World
     </h1>
+    <div
+      class="content-section__spacer"
+    />
   </section>
 </DocumentFragment>
 `;

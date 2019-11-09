@@ -17,6 +17,9 @@ const SubscribeSwitch = (props) => {
                 }
                 label="Notifications"
             />
+            {props.isSubscribed && <div className="subscribe__message">
+                You are subscribed to the morning snow report.
+            </div>}
         </div>
     );
 }
