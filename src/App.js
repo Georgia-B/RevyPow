@@ -4,7 +4,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import { getData } from './utils/dataHelper';
 import { hasPermission, revokePermission, requestNotificationPermission } from './utils/permissionHelper';
-import landscape from './res/landscape.jpg';
+import background from './res/background.jpg';
 
 class App extends Component {
   constructor() {
@@ -47,7 +47,7 @@ class App extends Component {
   render() {
     const { hasPermission, data } = this.state;
     return (
-      <div className="app" style={{ backgroundImage: `url(${landscape})` }}>
+      <div className="app" style={{ backgroundImage: `url(${background})` }}>
         <Header />
         <Panel data={data} hasPermission={hasPermission} />
         <Footer
